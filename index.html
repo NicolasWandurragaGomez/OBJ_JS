@@ -3,39 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>El Marco Mágico 📜</title>
+  <title>Ejemplo con Frame 📄</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🪄 ¡Bienvenido al Marco Mágico! 🪄</h1>
+  <h1>🌍 Mi página con frame</h1>
 
-  <iframe id="miMarco" src="mensaje.html"></iframe>
-
-  <div class="botones">
-    <button onclick="mostrarSaludo()">Mostrar saludo 👋</button>
-    <button onclick="mostrarFrase()">Mostrar frase 💬</button>
-    <button onclick="limpiarMarco()">Limpiar 🧹</button>
+  <div class="menu">
+    <a href="pagina1.html" target="marco">Ver página 1</a>
+    <a href="pagina2.html" target="marco">Ver página 2</a>
   </div>
 
-  <script>
-    // Obtenemos el iframe
-    const marco = document.getElementById("miMarco");
+  <iframe name="marco" src="pagina1.html"></iframe>
 
-    function mostrarSaludo() {
-      // Accedemos al documento dentro del iframe
-      const doc = marco.contentDocument || marco.contentWindow.document;
-      doc.body.innerHTML = "<h2>👋 ¡Hola, estudiante curioso!</h2><p>Este texto fue cambiado desde la página principal.</p>";
-    }
-
-    function mostrarFrase() {
-      const doc = marco.contentDocument || marco.contentWindow.document;
-      doc.body.innerHTML = "<h2>💡 'El DOM es el alma del HTML.'</h2><p>— ¡Y tú acabas de verlo en acción!</p>";
-    }
-
-    function limpiarMarco() {
-      const doc = marco.contentDocument || marco.contentWindow.document;
-      doc.body.innerHTML = "";
-    }
-  </script>
+  <p class="nota">Haz clic en los enlaces para cambiar el contenido dentro del frame.</p>
 </body>
 </html>
